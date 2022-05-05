@@ -1,37 +1,26 @@
-## Welcome to GitHub Pages
+## Welcome to visit `The birth of FunDB`
 
-You can use the [editor on GitHub](https://github.com/ctxdata/the-birth-of-fundb/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This is the place where I write down my ideas I come up with, issues I met and problems I solved during the period of writing the experiment MySQL Storage Engine.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+I hope you can enjoy every word in `The birth of FunDB`, :)
 
-### Markdown
+### The main feature of this storage engine
+I hope a talbe with FunDB will behave like Redis List value, the table will contain only two fields, id and value. 'id' is a typical INT AUTO INCREMENT PRIMARY KEY, while value is a List of Long which may present a stream of IDs for other tables.
+|id |messages  |
+--- | --- |
+|1|12,34,118,874|
+|2|443,8080|
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+So a SQL statement like `INSERT INTO tbl_user_messages VALUE(1, 8081)`, will be turn into an update to the row with `id=1`, and the logical representation of table will be
 
-```markdown
-Syntax highlighted code block
+|id |messages  |
+--- | --- |
+|1|12,34,118,874,<b>8081</b>|
+|2|443,8080|
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ctxdata/the-birth-of-fundb/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### The plan
+1. Prepare development environment
+2. Create initial source code, and make sure MySQL loads the storage engine.
+3. Try to create data file when creating a table (CREATE TABLE .. ENGINE = FUN)
+4. Write row data into data file (INSERT INTO tbl VALUES(1, 1000))
+5. TBD...
