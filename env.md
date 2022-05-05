@@ -69,5 +69,5 @@ mysql> show engines;
 
 Wow, though we did very few things, we can create table with `FUN` storage engine now. A big step for me. :)
 
-Next, I'll create a talbe with FUN storage engine, and play with it...
+Next, I'll create a table with FUN storage engine, and play with it...
 
