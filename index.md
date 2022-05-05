@@ -1,5 +1,7 @@
 ## Welcome to visit `The birth of FunDB`
 
+### Step by step to create a MySQL custom storage engine
+
 This is the place where I write down my ideas I come up with, issues I met and problems I solved during the period of writing the experiment MySQL Storage Engine.
 
 I hope you can enjoy every word in `The birth of FunDB`, :)
@@ -25,3 +27,6 @@ So a SQL statement like `INSERT INTO tbl_user_messages VALUE(1, 8081)`, will be 
 3. Try to create data file when creating a table (CREATE TABLE .. ENGINE = FUN)
 4. Write row data into data file (INSERT INTO tbl VALUES(1, 1000))
 5. TBD...
+
+### Step by step to create MySQL custom storage engine
+1.  [Prepare Development Environment](./env.md)
