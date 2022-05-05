@@ -5,7 +5,7 @@ This is the place where I write down my ideas I come up with, issues I met and p
 I hope you can enjoy every word in `The birth of FunDB`, :)
 
 ### The main feature of this storage engine
-I hope a talbe with FunDB will behave like Redis List value, the table will contain only two fields, id and value. 'id' is a typical INT AUTO INCREMENT PRIMARY KEY, while value is a List of Long which may present a stream of IDs for other tables.
+I hope a talbe with FunDB will behave like Redis List value, the table will contain only two fields, id and value. 'id' is a typical INT AUTO INCREMENT PRIMARY KEY, while value is a List of Long which may present a stream of IDs for other tables.<br>
 |id |messages  |
 --- | --- |
 |1|12,34,118,874|
