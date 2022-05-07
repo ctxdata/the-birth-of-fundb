@@ -71,3 +71,4 @@ Wow, though we did very few things, we can create table with `FUN` storage engin
 
 Next, I'll create a table with FUN storage engine, and play with it...
 
+[Play with our dummy storage engine](./play.md)
