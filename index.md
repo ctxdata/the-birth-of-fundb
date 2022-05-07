@@ -30,3 +30,5 @@ So a SQL statement like `INSERT INTO tbl_user_messages VALUE(1, 8081)`, will be 
 
 ### Step by step to create MySQL custom storage engine
 1.  [Prepare Development Environment](./env.md)
+2.  [Play with our dummy storage engine](./play.md)
+3.  
