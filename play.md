@@ -124,4 +124,4 @@ Empty set (0.00 sec)
 
 So I guess next step we'll create a data file and store rows into data file in `write_row`.
 
-[Store rows into data file](./datafile.md)
+Next: [Store rows into data file](./datafile.md)
