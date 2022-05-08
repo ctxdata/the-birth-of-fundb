@@ -74,7 +74,7 @@ mysql-8.0.26 % hexdump -c ./data/fundb/t1.fdb
 All `INSERT` operations are handled by `handler::write_row` method, our implementation looks like below:
 ```C++
 int ha_fun::write_row(uchar *buf) {
-  DBUG_TRACE;
+  DBUG_ENTER("ha_fun::write_row");
   
   ha_statistic_increment(&System_status_var::ha_write_count);
 
@@ -125,7 +125,25 @@ And then check whether the data file is open and ready for writing, open the dat
       DBUG_RETURN(-1);
 ```
 
-Then write the `attribute` String into data file
+We open the data file with `O_APPEND` mode, so new rows will be appended at the end of the data file
+```C++
+int ha_fun::init_fd_writer() {
+  DBUG_TRACE;
+
+  if ((share->fundb_write_fd =
+           mysql_file_open(fundb_key_file_data, share->data_file_name,
+                           O_RDWR | O_APPEND, MYF(MY_WME))) == -1) {
+    DBUG_PRINT("info", ("Could not open tina file writes"));
+    share->crashed = true;
+    return my_errno() ? my_errno() : -1;
+  }
+  share->fd_write_opened = true;
+
+  return 0;
+}
+```
+
+Once the data file is opened for append, we'll write the `buffer` String of row data into data file
 
 ```C++
   if (mysql_file_write(share->fundb_write_fd,
