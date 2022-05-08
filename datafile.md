@@ -52,6 +52,7 @@ mysql-8.0.26 % ls -l ./data/FUNDB/t1*
 
 ### Append rows into data file
 Once we have a data file for each table, we'd write rows into data file for each INSERT operation.
+
 ```SQL
 mysql> INSERT INTO t1 VALUES(1, 100000);
 Query OK, 1 row affected (4.22 sec)
@@ -71,6 +72,7 @@ mysql-8.0.26 % hexdump -c ./data/fundb/t1.fdb
 0000009
 ```
 
+According to [Adding Support for INSERT to a Storage Engine](https://dev.mysql.com/doc/internals/en/support-for-insert.html)
 All `INSERT` operations are handled by `handler::write_row` method, our implementation looks like below:
 ```C++
 int ha_fun::write_row(uchar *buf) {
