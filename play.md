@@ -123,3 +123,5 @@ Empty set (0.00 sec)
 `INSERT` succeeded but we still cannot fetch data from our storage engine, because we didn't save the data. 
 
 So I guess next step we'll create a data file and store rows into data file in `write_row`.
+
+[Store rows into data file](./datafile.md)
