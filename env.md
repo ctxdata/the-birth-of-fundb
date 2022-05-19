@@ -17,8 +17,9 @@ After this step, we can build MySQL with `make` command now
 ```
 
 ### Start self-built MySQL Server
-After the compilation, there would be a `bin` shortcut folder with all binaries including `mysqld`, `mysql` etc. Now you can simply start MySQL server process
+After the compilation, there would be a `bin` shortcut folder with all binaries including `mysqld`, `mysql` etc. You may initialize MySQL database and then you can simply start MySQL server process
 ```bash
+% ./mysqld --initialize --user=mysql
 % ./mysqld -u mysql &
 ```
 We can connect to this MySQL Server with `mysql` tool.
