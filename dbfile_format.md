@@ -49,3 +49,8 @@ metadata file format:
 
 lookup data from metadata:
 ![data file](./images/fundb_data.png)
+
+Next, we'd read rows by `SQL` from FunDB.
+[Read all rows from FunDB](./readrows.md)
+
+

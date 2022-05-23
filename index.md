@@ -32,4 +32,6 @@ So a SQL statement like `INSERT INTO tbl_user_messages VALUE(1, 8081)`, will be 
 1.  [Prepare Development Environment](./env.md)
 2.  [Play with our dummy storage engine](./play.md)
 3.  [Store rows into data file](./datafile.md)
-4.  
+4.  [FunDB data file format design details](./dbfile_format.md)
+5.  [Read all rows from FunDB](./readrows.md)
+6.  

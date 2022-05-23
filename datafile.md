@@ -157,3 +157,6 @@ Once the data file is opened for append, we'll write the `buffer` String of row 
 Now, we can save rows into our *.fdb data file.
 
 Next time, we'll try to read data from data file.
+
+Refine data file format, [FunDB data file format](./dbfile_format.md)
+
